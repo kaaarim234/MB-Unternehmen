@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KABE Distributions - Dienstleistungen</title>
+  <link href="./output.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+    body {
+      font-family: 'Bebas Neue', sans-serif;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .menu-hidden {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .menu-visible {
+      transform: translateX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #mobile-menu {
+      z-index: 100;
+    }
+
+
+  </style>
+</head>
+<body class="bg-white text-black">
+  <!-- Header -->
+  <header class="fixed top-0 w-full bg-white border-b-2 border-red-500 z-50">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+      <!-- Logo -->
+      <img src="kabedistributionslogo.png" alt="Logo" class="h-14 md:h-24">
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-6">
+        <a href="about.html" class="font-bold text-black hover:text-red-500">Über Uns</a>
+        <a href="references.html" class="font-bold text-black hover:text-red-500">Referenzen</a>
+        <a href="services.html" class="font-bold text-black hover:text-red-500">Dienstleistungen</a>
+        <a href="#contact" class="font-bold text-black hover:text-red-500">Kontakt</a>
+        <a href="imprint.html" class="font-bold text-black hover:text-red-500">Impressum</a>
+      </nav>
+
+      <!-- Burger Icon -->
+      <button id="burger" class="text-black md:hidden focus:outline-none">
+        <img src="burgericon.png" alt="Menu" class="h-8 w-8">
+      </button>
+    </div>
+  </header>
+
+  <!-- Swipe-in Menu for Mobile -->
+  <div id="mobile-menu" class="fixed top-0 right-0 w-3/4 h-full bg-white shadow-lg border-l-2 border-red-500 z-50 menu-hidden">
+    <button id="close-menu" class="absolute top-4 right-4 focus:outline-none">
+      <img src="xicon.png" alt="Close" class="h-8 w-8">
+    </button>
+    <ul class="flex flex-col items-center mt-20 space-y-8">
+      <li><a href="about.html" class="text-xl font-bold hover:text-red-500">Über Uns</a></li>
+      <li><a href="references.html" class="text-xl font-bold hover:text-red-500">Referenzen</a></li>
+      <li><a href="services.html" class="text-xl font-bold hover:text-red-500">Dienstleistungen</a></li>
+      <li><a href="#contact" class="text-xl font-bold hover:text-red-500">Kontakt</a></li>
+      <li><a href="imprint.html" class="text-xl font-bold hover:text-red-500">Impressum</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="h-64 flex items-center justify-center bg-cover bg-center" style="background-image: url('services-header.jpg');">
+    <div class="bg-white p-4">
+      <h1 class="text-4xl font-bold text-red-500 mt-16">Unsere Dienstleistungen</h1>
+    </div>
+  </section>
+  
+
+  <!-- Dienstleistungen -->
+  <section class="py-16">
+    <div class="container mx-auto space-y-12">
+      <!-- Dienstleistung 1 -->
+      <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12">
+        <div class="md:w-1/2">
+          <img src="ueberUns_1.jpg" alt="Dienstleistung 1" class="w-full rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-red-500 mb-4">Präzisionsteilefertigung</h2>
+          <p class="text-gray-700 text-lg">Unsere Präzisionsteile werden mit modernsten Maschinen und höchsten Qualitätsstandards gefertigt. Jedes Bauteil wird sorgfältig geprüft, um Ihre Erwartungen zu übertreffen.</p>
+        </div>
+      </div>
+  
+      <!-- Dienstleistung 2 -->
+      <div class="flex flex-col md:flex-row-reverse items-center space-y-6 md:space-y-0 md:space-x-12">
+        <div class="md:w-1/2">
+          <img src="ueberUns_1.jpg" alt="Dienstleistung 2" class="w-full rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-red-500 mb-4">Montage und Integration</h2>
+          <p class="text-gray-700 text-lg">Unser erfahrenes Team unterstützt Sie bei der Montage und Integration Ihrer Bauteile. Von der Planung bis zur finalen Umsetzung sorgen wir für einen reibungslosen Ablauf.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-gray-200 border-t-2 border-red-500">
+    <div class="container mx-auto text-center text-gray-600 text-sm">
+      © 2024 KABE Distributions - Alle Rechte vorbehalten. | <a href="imprint.html" class="hover:text-red-500">Impressum</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const burger = document.getElementById("burger");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMenu = document.getElementById("close-menu");
+
+    burger.addEventListener("click", () => {
+      mobileMenu.classList.toggle("menu-visible");
+      mobileMenu.classList.toggle("menu-hidden");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.remove("menu-visible");
+      mobileMenu.classList.add("menu-hidden");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        !mobileMenu.contains(e.target) &&
+        !burger.contains(e.target) &&
+        mobileMenu.classList.contains("menu-visible")
+      ) {
+        mobileMenu.classList.remove("menu-visible");
+        mobileMenu.classList.add("menu-hidden");
+      }
+    });
+  </script>
+</body>
+</html>
