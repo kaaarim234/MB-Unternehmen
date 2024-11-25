@@ -13,7 +13,6 @@
       font-family: 'Bebas Neue', sans-serif;
     }
 
-    /* Menü Swipe-in Animation */
     .menu-hidden {
       transform: translateX(100%);
       transition: transform 0.3s ease-in-out;
@@ -24,31 +23,28 @@
       transition: transform 0.3s ease-in-out;
     }
 
-    /* Animations for sections */
-    .fade-in-left {
+    .fade-in-left, .fade-in-right {
       opacity: 0;
       transform: translateX(-50px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
     .fade-in-right {
-      opacity: 0;
       transform: translateX(50px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
     .show {
       opacity: 1;
       transform: translateX(0);
     }
-    /* z-Index für Menü erhöht */
+
     #mobile-menu {
       z-index: 100;
     }
 
     header #burger {
       position: absolute;
-      right: 1rem; /* Immer auf der rechten Seite */
+      right: 1rem;
     }
   </style>
 </head>
@@ -57,13 +53,13 @@
   <!-- Header -->
   <header class="fixed top-0 w-full bg-white border-b-2 border-red-500 z-50">
     <div class="container mx-auto flex justify-between items-center px-6 py-4">
-      <img src="kabedistributionslogo.png" alt="Logo" class="h-16 md:h-24">
-      <button id="burger" class="text-black focus:outline-none md:static md:right-0 md:absolute">
+      <a href="index.html">
+        <img src="kabedistributionslogo.png" alt="Logo" class="h-14 md:h-24">
+      </a>      <button id="burger" class="text-black focus:outline-none">
         <img src="burgericon.png" alt="Menu" class="h-8 w-8">
       </button>
     </div>
   </header>
-  
 
   <!-- Swipe-in Menu -->
   <div id="mobile-menu" class="fixed top-0 right-0 w-3/4 md:w-1/4 h-full bg-white shadow-lg border-l-2 border-red-500 z-50 menu-hidden">
@@ -72,16 +68,16 @@
     </button>
     <ul class="flex flex-col items-center mt-20 space-y-8">
       <li><a href="about.html" class="text-xl font-bold hover:text-red-500">Über Uns</a></li>
-      <!--<li class="mt-2"><a href="references.html" class="text-xl font-bold hover:text-red-500">Referenzen</a></li> -->
       <li><a href="services.html" class="text-xl font-bold hover:text-red-500">Dienstleistungen</a></li>
       <li><a href="#contact" class="text-xl font-bold hover:text-red-500">Kontakt</a></li>
       <li><a href="imprint.html" class="text-xl font-bold hover:text-red-500">Impressum</a></li>
     </ul>
   </div>
+
   <!-- Hero Section -->
   <section class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('maschinenbautitelbild.png');">
     <div class="text-center space-y-6">
-      <h1 class="text-6xl font-bold text-black">Präzision für die größten Projekte</h1>
+      <h1 class="text-6xl font-bold text-black">Präzision für die Ihre Projekte</h1>
       <p class="text-2xl text-gray-700">Ihre Experten für hochqualitative Lösungen im Maschinenbau</p>
       <div class="space-x-4">
         <a href="services.html" class="px-6 py-3 bg-red-500 text-white font-bold uppercase hover:bg-red-700 transition duration-300">Unsere Dienstleistungen</a>
@@ -93,7 +89,6 @@
   <!-- Über Uns -->
   <section id="about" class="py-20">
     <div class="container mx-auto space-y-20">
-      <!-- Abschnitt 1 -->
       <div class="flex flex-col md:flex-row items-center fade-in-left">
         <div class="md:w-1/2 text-lg text-black">
           <h2 class="text-4xl font-bold text-red-500 mb-4">Über Uns</h2>
@@ -103,7 +98,6 @@
           <img src="ueberUns_1.jpg" alt="Über Uns Bild 1" class="w-full">
         </div>
       </div>
-      <!-- Abschnitt 2 -->
       <div class="flex flex-col md:flex-row-reverse items-center fade-in-right">
         <div class="md:w-1/2 text-lg text-black">
           <p>Unsere Mission ist es, hochqualitative mechanische Teile zu liefern.</p>
@@ -112,117 +106,106 @@
           <img src="qualitaet_Maschinenbau.png" alt="Über Uns Bild 2" class="w-full">
         </div>
       </div>
-      <!-- Abschnitt 3 -->
-      <div class="flex flex-col md:flex-row items-center fade-in-left">
-        <div class="md:w-1/2 text-lg text-black">
-          <p>Dank unserer internationalen Produktion bieten wir maximale Effizienz.</p>
-        </div>
-        <div class="md:w-1/2">
-          <img src="https://via.placeholder.com/500" alt="Über Uns Bild 3" class="w-full">
-        </div>
-      </div>
-    </div>
-    <section class="py-16 bg-white">
-        <div class="container mx-auto text-center">
-          <h2 class="text-4xl font-bold text-red-500 mb-12">Unser Prozess</h2>
-          <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8">
-            <!-- Schritt 1 -->
-            <div class="flex flex-col items-center">
-              <div class="h-16 w-16 bg-red-500 text-white flex items-center justify-center rounded-full text-2xl font-bold">1</div>
-              <p class="mt-4 font-bold text-lg">Projektanfrage</p>
-              <div class="w-16 h-1 bg-red-500 mt-2"></div>
-              <p class="text-sm mt-2 text-gray-600">Wir analysieren Ihre Anforderungen und erstellen einen ersten Plan.</p>
-            </div>
-      
-            <!-- Pfeil -->
-            <div class="hidden md:block">
-              <svg class="w-10 h-10 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M13.293 17.293a1 1 0 011.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 1.414L17.586 11H3a1 1 0 100 2h14.586l-4.293 4.293a1 1 0 000 1.414z"></path>
-              </svg>
-            </div>
-      
-            <!-- Schritt 2 -->
-            <div class="flex flex-col items-center">
-              <div class="h-16 w-16 bg-orange-500 text-white flex items-center justify-center rounded-full text-2xl font-bold">2</div>
-              <p class="mt-4 font-bold text-lg">Angebot</p>
-              <div class="w-16 h-1 bg-orange-500 mt-2"></div>
-              <p class="text-sm mt-2 text-gray-600">Wir erstellen ein detailliertes Angebot basierend auf Ihren Anforderungen.</p>
-            </div>
-      
-            <!-- Pfeil -->
-            <div class="hidden md:block">
-              <svg class="w-10 h-10 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M13.293 17.293a1 1 0 011.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 1.414L17.586 11H3a1 1 0 100 2h14.586l-4.293 4.293a1 1 0 000 1.414z"></path>
-              </svg>
-            </div>
-      
-            <!-- Schritt 3 -->
-            <div class="flex flex-col items-center">
-              <div class="h-16 w-16 bg-yellow-500 text-white flex items-center justify-center rounded-full text-2xl font-bold">3</div>
-              <p class="mt-4 font-bold text-lg">Vereinbarung</p>
-              <div class="w-16 h-1 bg-yellow-500 mt-2"></div>
-              <p class="text-sm mt-2 text-gray-600">Nach Abstimmung bestätigen wir die Details und schließen die Vereinbarung ab.</p>
-            </div>
-      
-            <!-- Pfeil -->
-            <div class="hidden md:block">
-              <svg class="w-10 h-10 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M13.293 17.293a1 1 0 011.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 1.414L17.586 11H3a1 1 0 100 2h14.586l-4.293 4.293a1 1 0 000 1.414z"></path>
-              </svg>
-            </div>
-      
-            <!-- Schritt 4 -->
-            <div class="flex flex-col items-center">
-              <div class="h-16 w-16 bg-purple-500 text-white flex items-center justify-center rounded-full text-2xl font-bold">4</div>
-              <p class="mt-4 font-bold text-lg">Durchführung</p>
-              <div class="w-16 h-1 bg-purple-500 mt-2"></div>
-              <p class="text-sm mt-2 text-gray-600">Unser Team führt das Projekt effizient und präzise aus.</p>
-            </div>
-      
-            <!-- Pfeil -->
-            <div class="hidden md:block">
-              <svg class="w-10 h-10 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M13.293 17.293a1 1 0 011.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 1.414L17.586 11H3a1 1 0 100 2h14.586l-4.293 4.293a1 1 0 000 1.414z"></path>
-              </svg>
-            </div>
-      
-            <!-- Schritt 5 -->
-            <div class="flex flex-col items-center">
-              <div class="h-16 w-16 bg-blue-500 text-white flex items-center justify-center rounded-full text-2xl font-bold">5</div>
-              <p class="mt-4 font-bold text-lg">Schluss</p>
-              <div class="w-16 h-1 bg-blue-500 mt-2"></div>
-              <p class="text-sm mt-2 text-gray-600">Nach Abschluss erhalten Sie die Projektdokumentation.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-  
-  
-
-  <!-- Kontakt -->
-  <section id="contact" class="py-20 bg-gray-100">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold text-red-500 mb-6">Kontaktieren Sie uns</h2>
-      <div class="flex flex-col items-center space-y-4">
-        <!-- Email -->
-        <div class="flex items-center space-x-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 9.4L12 13.25 7.5 9.4M21 12.08V7a2 2 0 00-2-2H5a2 2 0 00-2 2v5.08m16 0a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-          <a href="mailto:info@kabe-distributions.com" class="text-gray-700 hover:text-red-500">info@kabe-distributions.com</a>
-        </div>
-        <!-- Phone -->
-        <div class="flex items-center space-x-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h1.55a2 2 0 011.94 1.46l.59 2.34a2 2 0 01-.44 1.83l-.95.95a17.7 17.7 0 007.08 7.08l.95-.95a2 2 0 011.83-.44l2.34.59a2 2 0 011.46 1.94V19a2 2 0 01-2 2h-1.55a2 2 0 01-1.94-1.46l-.59-2.34a2 2 0 01.44-1.83l.95-.95a17.7 17.7 0 00-7.08-7.08l-.95.95a2 2 0 01-1.83.44l-2.34-.59A2 2 0 015 3H3a2 2 0 01-2-2v1.55z" />
-          </svg>
-          <a href="tel:+43123456789" class="text-gray-700 hover:text-red-500">+43 123 456 789</a>
-        </div>
-      </div>
     </div>
   </section>
-  
+
+<!-- Unser Prozess -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold text-red-500 mb-12">Unser Prozess</h2>
+    <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8">
+      <!-- Phase 1: Initiierung -->
+      <div class="flex flex-col items-center">
+        <div class="h-16 w-16 bg-red-500 text-white flex items-center justify-center rounded-full text-2xl font-bold">1</div>
+        <p class="mt-4 font-bold text-lg">Initiierung</p>
+        <div class="w-16 h-1 bg-red-500 mt-2"></div>
+        <p class="text-sm mt-2 text-gray-600">In der Initiierungsphase definieren wir gemeinsam die Projektziele, den Rahmen und die Anforderungen. Wir analysieren Ihre Bedürfnisse und erstellen eine erste Machbarkeitsstudie.</p>
+      </div>
+
+      <!-- Pfeil -->
+      <div class="hidden md:block">
+        <svg class="w-10 h-10 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M13.293 17.293a1 1 0 011.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 1.414L17.586 11H3a1 1 0 100 2h14.586l-4.293 4.293a1 1 0 000 1.414z"></path>
+        </svg>
+      </div>
+
+      <!-- Phase 2: Planung -->
+      <div class="flex flex-col items-center">
+        <div class="h-16 w-16 bg-orange-500 text-white flex items-center justify-center rounded-full text-2xl font-bold">2</div>
+        <p class="mt-4 font-bold text-lg">Planung</p>
+        <div class="w-16 h-1 bg-orange-500 mt-2"></div>
+        <p class="text-sm mt-2 text-gray-600">Wir entwickeln einen detaillierten Projektplan, der den Zeitrahmen, das Budget, die Ressourcen sowie potenzielle Risiken berücksichtigt. Ein strukturierter Plan ist die Grundlage für eine erfolgreiche Umsetzung.</p>
+      </div>
+
+      <!-- Pfeil -->
+      <div class="hidden md:block">
+        <svg class="w-10 h-10 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M13.293 17.293a1 1 0 011.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 1.414L17.586 11H3a1 1 0 100 2h14.586l-4.293 4.293a1 1 0 000 1.414z"></path>
+        </svg>
+      </div>
+
+      <!-- Phase 3: Durchführung -->
+      <div class="flex flex-col items-center">
+        <div class="h-16 w-16 bg-yellow-500 text-white flex items-center justify-center rounded-full text-2xl font-bold">3</div>
+        <p class="mt-4 font-bold text-lg">Durchführung</p>
+        <div class="w-16 h-1 bg-yellow-500 mt-2"></div>
+        <p class="text-sm mt-2 text-gray-600">Unser Team setzt die geplanten Maßnahmen präzise um. Dabei sorgen wir für eine reibungslose Koordination und höchste Qualität bei der Ausführung.</p>
+      </div>
+
+      <!-- Pfeil -->
+      <div class="hidden md:block">
+        <svg class="w-10 h-10 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M13.293 17.293a1 1 0 011.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 1.414L17.586 11H3a1 1 0 100 2h14.586l-4.293 4.293a1 1 0 000 1.414z"></path>
+        </svg>
+      </div>
+
+      <!-- Phase 4: Überwachung und Steuerung -->
+      <div class="flex flex-col items-center">
+        <div class="h-16 w-16 bg-purple-500 text-white flex items-center justify-center rounded-full text-2xl font-bold">4</div>
+        <p class="mt-4 font-bold text-lg">Überwachung</p>
+        <div class="w-16 h-1 bg-purple-500 mt-2"></div>
+        <p class="text-sm mt-2 text-gray-600">Während des Projekts überwachen wir den Fortschritt kontinuierlich und passen bei Bedarf Maßnahmen an, um die definierten Ziele termingerecht zu erreichen.</p>
+      </div>
+
+      <!-- Pfeil -->
+      <div class="hidden md:block">
+        <svg class="w-10 h-10 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M13.293 17.293a1 1 0 011.414 0l5-5a1 1 0 000-1.414l-5-5a1 1 0 00-1.414 1.414L17.586 11H3a1 1 0 100 2h14.586l-4.293 4.293a1 1 0 000 1.414z"></path>
+        </svg>
+      </div>
+
+      <!-- Phase 5: Abschluss -->
+      <div class="flex flex-col items-center">
+        <div class="h-16 w-16 bg-blue-500 text-white flex items-center justify-center rounded-full text-2xl font-bold">5</div>
+        <p class="mt-4 font-bold text-lg">Abschluss</p>
+        <div class="w-16 h-1 bg-blue-500 mt-2"></div>
+        <p class="text-sm mt-2 text-gray-600">Zum Abschluss übergeben wir Ihnen die Ergebnisse und stellen eine umfassende Projektdokumentation bereit. Eine finale Bewertung sichert die Qualität.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Kontakt -->
+<!-- Kontakt -->
+<section id="contact" class="py-20 bg-gray-100">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold text-red-500 mb-6">Kontaktieren Sie uns</h2>
+    <div class="flex flex-col items-center space-y-4">
+      <!-- Email -->
+      <div class="flex items-center space-x-3">
+        <img src="email.svg" alt="Email Icon" class="h-6 w-6">
+        <a href="mailto:info@kabe-distributions.com" class="text-gray-700 hover:text-red-500">info@kabe-distributions.com</a>
+      </div>
+      <!-- Phone -->
+      <div class="flex items-center space-x-3">
+        <img src="phone.svg" alt="Phone Icon" class="h-6 w-6">
+        <a href="tel:+43 676 4513767" class="text-gray-700 hover:text-red-500">+43 123 456 789</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer class="py-6 bg-gray-200 border-t-2 border-red-500">
@@ -231,46 +214,47 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script>
     const burger = document.getElementById("burger");
-const mobileMenu = document.getElementById("mobile-menu");
-const closeMenu = document.getElementById("close-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMenu = document.getElementById("close-menu");
 
-burger.addEventListener("click", () => {
-  const isVisible = mobileMenu.classList.contains("menu-visible");
-  mobileMenu.classList.toggle("menu-visible", !isVisible);
-  mobileMenu.classList.toggle("menu-hidden", isVisible);
-});
+    burger.addEventListener("click", () => {
+      mobileMenu.classList.toggle("menu-visible");
+      mobileMenu.classList.toggle("menu-hidden");
+    });
 
-closeMenu.addEventListener("click", () => {
-  mobileMenu.classList.remove("menu-visible");
-  mobileMenu.classList.add("menu-hidden");
-});
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.remove("menu-visible");
+      mobileMenu.classList.add("menu-hidden");
+    });
 
-document.addEventListener("click", (e) => {
-  if (
-    !mobileMenu.contains(e.target) &&
-    !burger.contains(e.target) &&
-    mobileMenu.classList.contains("menu-visible")
-  ) {
-    mobileMenu.classList.remove("menu-visible");
-    mobileMenu.classList.add("menu-hidden");
-  }
-});
+    document.addEventListener("click", (e) => {
+      if (!mobileMenu.contains(e.target) && !burger.contains(e.target) && mobileMenu.classList.contains("menu-visible")) {
+        mobileMenu.classList.remove("menu-visible");
+        mobileMenu.classList.add("menu-hidden");
+      }
+    });
 
-// Animation observer
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-});
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
+    const menuLinks = mobileMenu.querySelectorAll("a");
 
+    menuLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("menu-visible");
+        mobileMenu.classList.add("menu-hidden");
+      });
+    });
 
-document.querySelectorAll(".fade-in-left, .fade-in-right").forEach((el) => observer.observe(el));
+    
 
+    document.querySelectorAll(".fade-in-left, .fade-in-right").forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>

@@ -16,17 +16,6 @@
       min-height: 100vh;
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    }
-
-    .show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     .menu-hidden {
       transform: translateX(100%);
       transition: transform 0.3s ease-in-out;
@@ -42,7 +31,7 @@
     }
 
     footer {
-      margin-top: auto; /* Ensures footer stays at the bottom */
+      margin-top: auto;
     }
   </style>
 </head>
@@ -50,40 +39,20 @@
   <!-- Header -->
   <header class="fixed top-0 w-full bg-white border-b-2 border-red-500 z-50">
     <div class="container mx-auto flex justify-between items-center px-6 py-4">
-      <!-- Logo -->
       <a href="index.html">
         <img src="kabedistributionslogo.png" alt="Logo" class="h-14 md:h-24">
       </a>
-
-      <!-- Desktop Navigation -->
       <nav class="hidden md:flex space-x-6">
         <a href="index.html" class="font-bold text-black hover:text-red-500">Startseite</a>
         <a href="about.html" class="font-bold text-black hover:text-red-500">Über Uns</a>
-        <!--<a href="services.html" class="font-bold text-black hover:text-red-500">Dienstleistungen</a> -->
         <a href="index.html#contact" class="font-bold text-black hover:text-red-500">Kontakt</a>
         <a href="imprint.html" class="font-bold text-black hover:text-red-500">Impressum</a>
       </nav>
-
-      <!-- Burger Icon -->
       <button id="burger" class="text-black md:hidden focus:outline-none">
         <img src="burgericon.png" alt="Menu" class="h-8 w-8">
       </button>
     </div>
   </header>
-
-  <!-- Swipe-in Menu for Mobile -->
-  <div id="mobile-menu" class="fixed top-0 right-0 w-3/4 h-full bg-white shadow-lg border-l-2 border-red-500 z-50 menu-hidden">
-    <button id="close-menu" class="absolute top-4 right-4 focus:outline-none">
-      <img src="xicon.png" alt="Close" class="h-8 w-8">
-    </button>
-    <ul class="flex flex-col items-center mt-20 space-y-8">
-      <li><a href="index.html" class="text-xl font-bold hover:text-red-500">Startseite</a></li>
-      <li><a href="about.html" class="text-xl font-bold hover:text-red-500">Über Uns</a></li>
-      <li><a href="services.html" class="text-xl font-bold hover:text-red-500">Dienstleistungen</a></li>
-      <li><a href="#contact" class="text-xl font-bold hover:text-red-500">Kontakt</a></li>
-      <li><a href="imprint.html" class="text-xl font-bold hover:text-red-500">Impressum</a></li>
-    </ul>
-  </div>
 
   <!-- Hero Section -->
   <section class="h-64 flex items-center justify-center bg-cover bg-center" style="background-image: url('services-header.jpg');">
@@ -95,25 +64,68 @@
   <!-- Dienstleistungen -->
   <section class="py-16">
     <div class="container mx-auto space-y-12">
-      <!-- Dienstleistung 1 -->
+      <!-- Fertigung -->
       <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12">
         <div class="md:w-1/2">
-          <img src="ueberUns_1.jpg" alt="Dienstleistung 1" class="w-full rounded-lg shadow-md">
+          <img src="fertigung.jpg" alt="Fertigung" class="w-full rounded-lg shadow-md">
         </div>
         <div class="md:w-1/2">
-          <h2 class="text-3xl font-bold text-red-500 mb-4">Präzisionsteilefertigung</h2>
-          <p class="text-gray-700 text-lg">Unsere Präzisionsteile werden mit modernsten Maschinen und höchsten Qualitätsstandards gefertigt. Jedes Bauteil wird sorgfältig geprüft, um Ihre Erwartungen zu übertreffen.</p>
+          <h2 class="text-3xl font-bold text-red-500 mb-4">Fertigung</h2>
+          <p class="text-gray-700 text-lg">
+            Mit einem klaren Fokus auf Präzision und Qualität fertigen wir Bauteile, die höchsten Ansprüchen gerecht werden. Egal ob Einzelanfertigungen oder Großaufträge – unsere modernen Maschinen und Prozesse garantieren beste Ergebnisse.
+          </p>
         </div>
       </div>
 
-      <!-- Dienstleistung 2 -->
+      <!-- Schweißen, Drehen, Fräsen -->
       <div class="flex flex-col md:flex-row-reverse items-center space-y-6 md:space-y-0 md:space-x-12">
         <div class="md:w-1/2">
-          <img src="ueberUns_1.jpg" alt="Dienstleistung 2" class="w-full rounded-lg shadow-md">
+          <img src="schweissen.jpg" alt="Schweißen und Bearbeitung" class="w-full rounded-lg shadow-md">
         </div>
         <div class="md:w-1/2">
-          <h2 class="text-3xl font-bold text-red-500 mb-4">Montage und Integration</h2>
-          <p class="text-gray-700 text-lg">Unser erfahrenes Team unterstützt Sie bei der Montage und Integration Ihrer Bauteile. Von der Planung bis zur finalen Umsetzung sorgen wir für einen reibungslosen Ablauf.</p>
+          <h2 class="text-3xl font-bold text-red-500 mb-4">Schweißen, Drehen und Fräsen</h2>
+          <p class="text-gray-700 text-lg">
+            Ob präzises Schweißen, Drehen oder Fräsen – wir bieten eine umfassende Palette an Bearbeitungsdienstleistungen. Unsere Fachkräfte garantieren höchste Präzision und erfüllen auch komplexe Anforderungen.
+          </p>
+        </div>
+      </div>
+
+      <!-- Oberflächenbearbeitung -->
+      <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12">
+        <div class="md:w-1/2">
+          <img src="lackieren.jpg" alt="Sandstrahlen und Lackieren" class="w-full rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-red-500 mb-4">Sandstrahlen und Lackieren</h2>
+          <p class="text-gray-700 text-lg">
+            Unsere Oberflächenbearbeitung umfasst präzises Sandstrahlen und hochwertiges Lackieren. Diese Verfahren sorgen für eine perfekte Oberfläche, die sowohl funktional als auch ästhetisch überzeugt.
+          </p>
+        </div>
+      </div>
+
+      <!-- Laserschneiden -->
+      <div class="flex flex-col md:flex-row-reverse items-center space-y-6 md:space-y-0 md:space-x-12">
+        <div class="md:w-1/2">
+          <img src="laserschneiden.jpg" alt="Laserschneiden" class="w-full rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-red-500 mb-4">Laserschneiden</h2>
+          <p class="text-gray-700 text-lg">
+            Unser Laserschneidverfahren ermöglicht präzise Schnitte bei minimalem Materialverlust. Ideal für kleine Stahlbaukonstruktionen und komplexe Designs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Prototyperstellung -->
+      <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12">
+        <div class="md:w-1/2">
+          <img src="prototyp.jpg" alt="Prototyperstellung" class="w-full rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-red-500 mb-4">Prototyperstellung</h2>
+          <p class="text-gray-700 text-lg">
+            Sie haben eine innovative Idee? Wir setzen sie um! Mit unserer Prototyperstellung ermöglichen wir Ihnen, erste Entwürfe und Muster zu testen und zu optimieren.
+          </p>
         </div>
       </div>
     </div>
@@ -125,34 +137,5 @@
       © 2024 KABE Distributions - Alle Rechte vorbehalten. | <a href="imprint.html" class="hover:text-red-500">Impressum</a>
     </div>
   </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // Mobile menu toggle
-    const burger = document.getElementById("burger");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenu = document.getElementById("close-menu");
-
-    burger.addEventListener("click", () => {
-      mobileMenu.classList.toggle("menu-visible");
-      mobileMenu.classList.toggle("menu-hidden");
-    });
-
-    closeMenu.addEventListener("click", () => {
-      mobileMenu.classList.remove("menu-visible");
-      mobileMenu.classList.add("menu-hidden");
-    });
-
-    document.addEventListener("click", (e) => {
-      if (
-        !mobileMenu.contains(e.target) &&
-        !burger.contains(e.target) &&
-        mobileMenu.classList.contains("menu-visible")
-      ) {
-        mobileMenu.classList.remove("menu-visible");
-        mobileMenu.classList.add("menu-hidden");
-      }
-    });
-  </script>
 </body>
 </html>
