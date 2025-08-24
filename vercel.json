@@ -12,16 +12,5 @@
       "src": "/(.*)",
       "dest": "/dist/$1"
     }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex"
-        }
-      ]
-    }
   ]
 }
